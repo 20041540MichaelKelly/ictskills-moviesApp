@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = ({ title, history }) => {
+const FilmHeader = ({ title, history }) => {
   const classes = useStyles();
  
   return (
@@ -35,4 +35,4 @@ const Header = ({ title, history }) => {
   );
 };
 
-export default withRouter(Header);
+export default withRouter(FilmHeader);
