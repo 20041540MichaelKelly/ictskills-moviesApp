@@ -50,7 +50,7 @@ export default function MovieCard({ movie, action }) {
             <Avatar className={classes.avatar}>
               <FavoriteIcon />
             </Avatar>
-          ) : null,
+          ) : 
           movie.watchlist ? (
             <Avatar className={classes.avatar}>
               <PlaylistIcon />
