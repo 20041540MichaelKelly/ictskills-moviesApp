@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd'
-import { Link } from "react-router-dom";
+import { MoviesContext } from "../../contexts/moviesContext";
+//import { Link } from "react-router-dom";
+import IconButton from "@material-ui/core/IconButton";
 
-const plIcon = ({ movie }) => {
+const AddToPlaylistIcon = ({ movie }) => {
+  const context = useContext(MoviesContext);
+
+  const handleAddToWatchlist = (e) => {
+    e.preventDefault();
+    context.addToWatchlist(movie);
+    console.log(movie);
+  };
   return (
-    <Link>
-     
+    <IconButton aria-label="add to favorites" onClick={handleAddToWatchlist}>
       <PlaylistAddIcon color="primary" fontSize="large" />
-    </Link>
+    </IconButton>
+    
   );
 };
-
-export default plIcon;
+export default AddToPlaylistIcon;
